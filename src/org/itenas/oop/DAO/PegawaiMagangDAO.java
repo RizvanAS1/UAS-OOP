@@ -8,4 +8,5 @@ public interface PegawaiMagangDAO {
 	public User LoginPegawaiMagang(String Email, String Password);
 	public List<PegawaiMagang> GetAllPegawaiMagang();
 	public void SavePegawaiMagang(PegawaiMagang pm);
+	public void UpdateBioPegawaiM(PegawaiMagang pm);
 }

@@ -10,7 +10,9 @@ import org.itenas.oop.bea.User;
 import org.itenas.oop.dbConnection.dbConnection;
 
 public class PegawaiTetapDAOImpl implements PegawaiTetapDAO{
-
+	public static void main(String[] args) {
+		
+	}
 	@Override
 	public User LoginPegawaiTetap(String Email, String Password) {
 		dbConnection db = new dbConnection();
@@ -95,6 +97,30 @@ public class PegawaiTetapDAOImpl implements PegawaiTetapDAO{
 				  + pt.getJumlah_Dinas() +")";
 			db.executeQuery(query);
 			System.out.println("Data berhasil ditambahkan!");
+		} catch (Exception e) {
+			System.out.println("Terjadi error: " + e.getMessage());
+		}
+	}
+
+	@Override
+	public void UpdateBioPegawaiT(PegawaiTetap pt) {
+		dbConnection db = new dbConnection();
+		String query;
+		try {
+			db.connect();
+			query = "UPDATE pegawaitetap SET IDP='"+ pt.getIDP() +"',"
+				  + " Nama_Pegawai ='"+ pt.getNama_Pegawai() +"',"
+				  + " Divisi ='"+ pt.getDivisi() +"',"
+				  + " Level ='"+ pt.getLevel() +"',"
+				  + " Masa_Kerja ="+ pt.getMasa_Kerja() +","
+				  + " Status ='"+ pt.getStatus() +"',"
+				  + " Gaji_Pokok ="+ pt.getGaji_Pokok() +","
+				  + " Jumlah_Lembur ="+ pt.getJumlah_Lembur() +","
+				  + " Jumlah_Cuti ="+ pt.getJumlah_Cuti() +","
+				  + " Jumlah_Absen ="+ pt.getJumlah_Absen() +","
+				  + " Jumlah_Dinas ="+ pt.getJumlah_Dinas() +" WHERE IDP='"+ pt.getIDP() +"'";
+			db.executeQuery(query);
+			System.out.println("Data berhasil diperbarui!");
 		} catch (Exception e) {
 			System.out.println("Terjadi error: " + e.getMessage());
 		}

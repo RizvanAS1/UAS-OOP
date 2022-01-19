@@ -95,4 +95,26 @@ public class PegawaiMagangDAOImpl implements PegawaiMagangDAO{
 			System.out.println("Terjadi error: " + e.getMessage());
 		}
 	}
+
+	@Override
+	public void UpdateBioPegawaiM(PegawaiMagang pm) {
+		dbConnection db = new dbConnection();
+		String query;
+		try {
+			db.connect();
+			query = "UPDATE pegawaimagang SET IDPM='"+ pm.getIDPM() +"',"
+				  + " Nama_PegawaiM ='"+ pm.getNama_PegawaiM() +"',"
+				  + " Divisi ='"+ pm.getDivisi() +"',"
+				  + " Masa_Kerja ="+ pm.getMasa_Kerja() +","
+				  + " Status ='"+ pm.getStatus() +"',"
+				  + " Gaji_Pokok ="+ pm.getGaji_Pokok() +","
+				  + " Lama_Bekerja ="+ pm.getLama_Bekerja() +","
+				  + " Tanggal_Masuk ="+ pm.getTanggal_Masuk() +","
+				  + " Tanggal_Keluar ="+ pm.getTanggal_keluar() +" Where IDPM="+ pm.getIDPM();
+			db.executeQuery(query);
+			System.out.println("Data berhasil diperbarui!");
+		} catch (Exception e) {
+			System.out.println("Terjadi error: " + e.getMessage());
+		}
+	}
 }

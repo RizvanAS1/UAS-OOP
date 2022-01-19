@@ -98,4 +98,28 @@ public class PegawainonTetapDAOImpl implements PegawainonTetapDAO{
 			System.out.println("Terjadi error: " + e.getMessage());
 		}
 	}
+
+	@Override
+	public void UpdateBioPegawainT(PegawainonTetap pnt) {
+		dbConnection db = new dbConnection();
+		String query;
+		try {
+			db.connect();
+			query = "UPDATE pegawainontetap SET IDPnt='"+ pnt.getIDPnT() +"',"
+				  + " Nama_Pegawai ='"+ pnt.getNama_Pegawai() +"',"
+				  + " Divisi ='"+ pnt.getDivisi() +"',"
+				  + " Level ='"+ pnt.getLevel() +"',"
+				  + " Masa_Kerja ="+ pnt.getMasa_Kerja() +","
+				  + " Status ='"+ pnt.getStatus() +"',"
+				  + " Gaji_Pokok ="+ pnt.getGaji_Pokok() +","
+				  + " Jumlah_Lembur ="+ pnt.getJumlah_Lembur() +","
+				  + " Jumlah_Cuti ="+ pnt.getJumlah_Cuti() +","
+				  + " Jumlah_Absen ="+ pnt.getJumlah_Absen() +","
+				  + " Jumlah_Dinas ="+ pnt.getJumlah_Dinas() +" Where IDPnt='"+ pnt.getIDPnT() +"'";
+			db.executeQuery(query);
+			System.out.println("Data berhasil diperbarui!");
+		} catch (Exception e) {
+			System.out.println("Terjadi error: " + e.getMessage());
+		}
+	}
 }

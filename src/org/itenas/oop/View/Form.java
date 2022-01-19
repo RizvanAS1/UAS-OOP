@@ -54,6 +54,50 @@ public class Form {
         s.close();
 	}
 	
+	public static void FormUpdatePegawaiTetap() {
+		Scanner s = new Scanner (System.in);
+		PegawaiTetap pt = new PegawaiTetap();
+		PegawaiTetapDAO operator = new PegawaiTetapDAOImpl();
+		char back;
+		String IDP;
+		System.out.print("Masukkan IDP dari data yang akan diupdate: ");
+		IDP = s.nextLine();
+		pt.setIDP(IDP);
+		System.out.println("              ************************************                  ");
+        System.out.println("              |  Form Insert Data Pegawai Tetap  |                  ");
+        System.out.println("              ************************************                  ");
+        System.out.print(  "              | IDP			: ");
+        pt.setIDP(s.nextLine());       
+        System.out.print(  "              | Nama			: ");
+        pt.setNama_Pegawai(s.nextLine());      
+        System.out.print(  "              | Divisi			: ");
+        pt.setDivisi(s.nextLine());      
+        System.out.print(  "              | Level			: ");
+        pt.setLevel(s.nextLine());      
+        System.out.print(  "              | Masa Kerja		: ");
+        pt.setMasa_Kerja(Integer.parseInt(s.nextLine()));      
+        System.out.print(  "              | Status			: ");
+        pt.setStatus(s.nextLine());       
+        System.out.print(  "              | Gaji Pokok		: ");
+        pt.setGaji_Pokok(Integer.parseInt(s.nextLine()));
+        System.out.print(  "              | Jumlah Lembur		: ");
+        pt.setJumlah_Lembur(Integer.parseInt(s.nextLine())); 
+        System.out.print(  "              | Jumlah Cuti		: ");
+        pt.setJumlah_Cuti(Integer.parseInt(s.nextLine()));        
+        System.out.print(  "              | Jumlah Absen		: ");
+        pt.setJumlah_Absen(Integer.parseInt(s.nextLine()));       
+        System.out.print(  "              | Jumlah Dinas		: ");
+        pt.setJumlah_Dinas(Integer.parseInt(s.nextLine()));       
+        System.out.println("              ************************************                  ");
+        operator.UpdateBioPegawaiT(pt);
+        System.out.print("[B] Tekan Tombol B untuk kembali ke menu sebelumnya: ");
+		back = s.next().charAt(0);
+		if (back == 'B' || back == 'b') {
+			displayMenuPegawaiTetap.displayMenuPT();
+		}
+        s.close();
+	}
+	
 	public static void FormInsertPegawaiMagang() {
 		Scanner s = new Scanner (System.in);
 		PegawaiMagang pm = new PegawaiMagang();
@@ -68,11 +112,11 @@ public class Form {
         System.out.print(  "              | Nama				: ");
         pm.setNama_PegawaiM(s.nextLine());      
         System.out.print(  "              | Divisi				: ");
-        pm.setDivisi(s.nextLine());        
-        System.out.print(  "              | Status				: ");
-        pm.setStatus(s.nextLine());  
+        pm.setDivisi(s.nextLine());
         System.out.print(  "              | Masa Kerja (Bulan)		: ");
-        pm.setMasa_Kerja(Integer.parseInt(s.nextLine()));        
+        pm.setMasa_Kerja(Integer.parseInt(s.nextLine()));
+        System.out.print(  "              | Status				: ");
+        pm.setStatus(s.nextLine());   
         System.out.print(  "              | Gaji Pokok			: ");
         pm.setGaji_Pokok(Integer.parseInt(s.nextLine()));        
         System.out.print(  "              | Lama Bekerja (Jam)		: ");
@@ -84,6 +128,46 @@ public class Form {
         System.out.println("              ************************************                  ");
         
         opr.SavePegawaiMagang(pm);
+        System.out.print("[B] Tekan Tombol B untuk kembali ke menu sebelumnya: ");
+		back = s.next().charAt(0);
+		if (back == 'B' || back == 'b') {
+			displayMenuPegawaiMagang.displayMenuPM();
+		}
+        s.close();
+	}
+	
+	public static void FormUpdatePegawaiMagang() {
+		Scanner s = new Scanner (System.in);
+		PegawaiMagang pm = new PegawaiMagang();
+		PegawaiMagangDAO opr = new PegawaiMagangDAOImpl();
+		char back;
+		String IDPM;
+		System.out.print("Masukkan IDPM dari data yang akan diupdate: ");
+		IDPM = s.nextLine();
+		pm.setIDPM(IDPM);
+		System.out.println("              ************************************                  ");
+        System.out.println("              |  Form Insert Data Pegawai Magang  |                 ");
+        System.out.println("              ************************************                  ");
+        System.out.print(  "              | IDPM				: ");
+        pm.setIDPM(s.nextLine());       
+        System.out.print(  "              | Nama				: ");
+        pm.setNama_PegawaiM(s.nextLine());      
+        System.out.print(  "              | Divisi				: ");
+        pm.setDivisi(s.nextLine());
+        System.out.print(  "              | Masa Kerja (Bulan)		: ");
+        pm.setMasa_Kerja(Integer.parseInt(s.nextLine()));
+        System.out.print(  "              | Status				: ");
+        pm.setStatus(s.nextLine());          
+        System.out.print(  "              | Gaji Pokok			: ");
+        pm.setGaji_Pokok(Integer.parseInt(s.nextLine()));        
+        System.out.print(  "              | Lama Bekerja (Jam)		: ");
+        pm.setLama_Bekerja(Integer.parseInt(s.nextLine()));        
+        System.out.print(  "              | Tanggal Masuk (yyyy/mm/dd)	: ");
+        pm.setTanggal_Masuk(s.nextLine());       
+        System.out.print(  "              | Tanggal Keluar (yyyy/mm/dd)	: ");
+        pm.setTanggal_keluar(s.nextLine());       
+        System.out.println("              ************************************                  ");
+        opr.UpdateBioPegawaiM(pm);
         System.out.print("[B] Tekan Tombol B untuk kembali ke menu sebelumnya: ");
 		back = s.next().charAt(0);
 		if (back == 'B' || back == 'b') {
@@ -125,6 +209,50 @@ public class Form {
         pnt.setJumlah_Dinas(Integer.parseInt(s.nextLine()));       
         System.out.println("              ****************************************              ");
         nopr.SavePegawainonTetap(pnt);
+        System.out.print("[B] Tekan Tombol B untuk kembali ke menu sebelumnya: ");
+		back = s.next().charAt(0);
+		if (back == 'B' || back == 'b') {
+			displayMenuPegawainonTetap.displayMenunonPT();
+		}
+        s.close();
+	}
+	
+	public static void FormUpdatePegawainonTetap() {
+		Scanner s = new Scanner (System.in);
+		PegawainonTetap pnt = new PegawainonTetap();
+		PegawainonTetapDAO nopr = new PegawainonTetapDAOImpl();
+		char back;
+		String IDPnT;
+		System.out.print("Masukkan IDPnT dari data yang akan diupdate: ");
+		IDPnT = s.nextLine();
+		pnt.setIDPnT(IDPnT);
+		System.out.println("              ****************************************              ");
+        System.out.println("              |  Form Insert Data Pegawai Non Tetap  |              ");
+        System.out.println("              ****************************************              ");
+        System.out.print(  "              | IDP			: ");
+        pnt.setIDPnT(s.nextLine());       
+        System.out.print(  "              | Nama			: ");
+        pnt.setNama_Pegawai(s.nextLine());      
+        System.out.print(  "              | Divisi			: ");
+        pnt.setDivisi(s.nextLine());      
+        System.out.print(  "              | Level			: ");
+        pnt.setLevel(s.nextLine());      
+        System.out.print(  "              | Masa Kerja		: ");
+        pnt.setMasa_Kerja(Integer.parseInt(s.nextLine()));      
+        System.out.print(  "              | Status			: ");
+        pnt.setStatus(s.nextLine());       
+        System.out.print(  "              | Gaji Pokok		: ");
+        pnt.setGaji_Pokok(Integer.parseInt(s.nextLine()));
+        System.out.print(  "              | Jumlah Lembur		: ");
+        pnt.setJumlah_Lembur(Integer.parseInt(s.nextLine())); 
+        System.out.print(  "              | Jumlah Cuti		: ");
+        pnt.setJumlah_Cuti(Integer.parseInt(s.nextLine()));        
+        System.out.print(  "              | Jumlah Absen		: ");
+        pnt.setJumlah_Absen(Integer.parseInt(s.nextLine()));       
+        System.out.print(  "              | Jumlah Dinas		: ");
+        pnt.setJumlah_Dinas(Integer.parseInt(s.nextLine()));       
+        System.out.println("              ****************************************              ");
+        nopr.UpdateBioPegawainT(pnt);
         System.out.print("[B] Tekan Tombol B untuk kembali ke menu sebelumnya: ");
 		back = s.next().charAt(0);
 		if (back == 'B' || back == 'b') {

@@ -9,4 +9,5 @@ public interface PegawainonTetapDAO {
 	public User LoginPegawainonTetap(String Email, String Password);
 	public List<PegawainonTetap> GetAllPegawainonTetap();
 	public void SavePegawainonTetap(PegawainonTetap pnt);
+	public void UpdateBioPegawainT(PegawainonTetap pnt);
 }
