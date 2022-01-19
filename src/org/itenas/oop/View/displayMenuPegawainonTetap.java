@@ -1,20 +1,19 @@
 package org.itenas.oop.View;
 
 import java.util.Scanner;
+import org.itenas.oop.DAO.PegawainonTetapDAO;
+import org.itenas.oop.DAOImpl.PegawainonTetapDAOImpl;
 
-import org.itenas.oop.DAO.PegawaiTetapDAO;
-import org.itenas.oop.DAOImpl.PegawaiTetapDAOImpl;
-
-public class displayMenuPegawaiTetap {
-	public static void displayMenuPT() {
+public class displayMenuPegawainonTetap {
+	public static void displayMenunonPT() {
 		Scanner s = new Scanner (System.in);
-		PegawaiTetapDAO opr = new PegawaiTetapDAOImpl();
+		PegawainonTetapDAO nopr = new PegawainonTetapDAOImpl();
 		int menu;
 		System.out.println("              **************************************                  ");
-        System.out.println("              |         Data Pegawai Tetap         |                  ");
+        System.out.println("              |        Data Pegawai Non Tetap      |                  ");
         System.out.println("              **************************************                  ");
         System.out.println("              | Pilihan:                           |                  ");
-        System.out.println("              |        1. Input Biodaata           |  				  ");
+        System.out.println("              |        1. Input Biodata            |  				  ");
         System.out.println("              |        2. Tampilkan Seluruh Data   |                  ");
         System.out.println("              |        3. Cetak Slip Gaji          |                  ");
         System.out.println("              |        4. Logout                   |                  ");
@@ -29,13 +28,13 @@ public class displayMenuPegawaiTetap {
         }
         switch(menu) {
         case 1:
-        	Form.FormInsertPegawaiTetap();
+        	Form.FormInsertPegawainonTetap();
         	break;
         case 2:
-        	displayPegawaiTetap.DisplayPegawaiTetap(opr.GetAllPegawaiTetap());
+        	displayPegawainonTetap.DisplayPegawainonTetap(nopr.GetAllPegawainonTetap());
         	break;
         case 3:
-        	displayPegawaiTetap.FormSlipGaji(opr.GetAllPegawaiTetap());
+        	displayPegawainonTetap.FormSlipGaji(nopr.GetAllPegawainonTetap());
         	break;
         case 4:
         	Main.OpeningMenu();

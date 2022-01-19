@@ -26,7 +26,7 @@ public class Form {
 		User us = new User();
 		String Email;
 		AdminDAO opr = new AdminDAOImpl();
-		System.out.print("Masukkan Email dari data yang akan diupdate: ");
+		System.out.print("Masukkan Email dari data yang akan dihapus: ");
 		Email = s.nextLine();
 		us.setEmail(Email);
 		opr.DeleteBioPegawai(us);
