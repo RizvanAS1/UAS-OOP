@@ -2,48 +2,48 @@ package org.itenas.oop.View;
 
 import java.util.Scanner;
 
-import org.itenas.oop.DAO.PegawaiTetapDAO;
-import org.itenas.oop.DAOImpl.PegawaiTetapDAOImpl;
-import org.itenas.oop.bea.PegawaiTetap;
+import org.itenas.oop.DAO.PegawainonTetapDAO;
+import org.itenas.oop.DAOImpl.PegawainonTetapDAOImpl;
+import org.itenas.oop.bea.PegawainonTetap;
 
-public class Form {
-	public static void FormInsertPegawaiTetap() {
+public class FormnonTetap {
+	public static void FormInsertPegawainonTetap() {
 		Scanner s = new Scanner (System.in);
-		PegawaiTetap pt = new PegawaiTetap();
-		PegawaiTetapDAO opr = new PegawaiTetapDAOImpl();
+		PegawainonTetap pnt = new PegawainonTetap();
+		PegawainonTetapDAO nopr = new PegawainonTetapDAOImpl();
 		char back;
 		FormLogin.LoginPegawai();
 		System.out.println("              ************************************                  ");
-        System.out.println("              |  Form Insert Data Pegawai Tetap  |                  ");
+        System.out.println("              |  Form Insert Data Pegawai Non Tetap  |              ");
         System.out.println("              ************************************                  ");
         System.out.print(  "              | IDP			: ");
-        pt.setIDP(s.nextLine());       
+        pnt.setIDP(s.nextLine());       
         System.out.print(  "              | Nama			: ");
-        pt.setNama_Pegawai(s.nextLine());      
+        pnt.setNama_Pegawai(s.nextLine());      
         System.out.print(  "              | Divisi			: ");
-        pt.setDivisi(s.nextLine());      
+        pnt.setDivisi(s.nextLine());      
         System.out.print(  "              | Level			: ");
-        pt.setLevel(s.nextLine());      
+        pnt.setLevel(s.nextLine());      
         System.out.print(  "              | Masa Kerja		: ");
-        pt.setMasa_Kerja(Integer.parseInt(s.nextLine()));      
+        pnt.setMasa_Kerja(Integer.parseInt(s.nextLine()));      
         System.out.print(  "              | Status			: ");
-        pt.setStatus(s.nextLine());       
+        pnt.setStatus(s.nextLine());       
         System.out.print(  "              | Gaji Pokok		: ");
-        pt.setGaji_Pokok(Integer.parseInt(s.nextLine()));
+        pnt.setGaji_Pokok(Integer.parseInt(s.nextLine()));
         System.out.print(  "              | Jumlah Lembur		: ");
-        pt.setJumlah_Lembur(Integer.parseInt(s.nextLine())); 
+        pnt.setJumlah_Lembur(Integer.parseInt(s.nextLine())); 
         System.out.print(  "              | Jumlah Cuti		: ");
-        pt.setJumlah_Cuti(Integer.parseInt(s.nextLine()));        
+        pnt.setJumlah_Cuti(Integer.parseInt(s.nextLine()));        
         System.out.print(  "              | Jumlah Absen		: ");
-        pt.setJumlah_Absen(Integer.parseInt(s.nextLine()));       
+        pnt.setJumlah_Absen(Integer.parseInt(s.nextLine()));       
         System.out.print(  "              | Jumlah Dinas		: ");
-        pt.setJumlah_Dinas(Integer.parseInt(s.nextLine()));       
+        pnt.setJumlah_Dinas(Integer.parseInt(s.nextLine()));       
         System.out.println("              ************************************                  ");
-        opr.SavePegawaiTetap(pt);
+        nopr.SavePegawainonTetap(pnt);
         System.out.print("[B] Tekan Tombol B untuk kembali ke menu sebelumnya: ");
 		back = s.next().charAt(0);
 		if (back == 'B' || back == 'b') {
-			displayMenuPegawaiTetap.displayMenuPT();
+			displayMenuPegawainonTetap.displayMenunonPT();
 		}
         s.close();
 	}

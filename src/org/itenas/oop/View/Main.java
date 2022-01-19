@@ -14,14 +14,15 @@ public class Main {
 		System.out.println("              ******************************************                  ");
         System.out.println("              |             Selamat Datang             |                  ");
         System.out.println("              ******************************************                  ");
-        System.out.println("              |               1. Admin                 |  				  ");
-        System.out.println("              |              2. Pegawai                |                  ");
-        System.out.println("              |               3. Exit                  |                  ");
+        System.out.println("              |              1. Admin                  |  				  ");
+        System.out.println("              |              2. Pegawai Tetap          |                  ");
+        System.out.println("              |              3. Pegawai Non Tetap      |                  ");
+        System.out.println("              |              4. Exit                   |                  ");
         System.out.println("              ******************************************                  ");	
         System.out.println();
         System.out.print("Pilih Menu: ");
         menu = s.nextInt();
-        while (!(menu == 1 || menu == 2 || menu == 3)) {
+        while (!(menu == 1 || menu == 2 || menu == 3 || menu == 4)) {
         	System.out.println("Warning: Menu yang Anda masukkan salah!");
         	System.out.print("Silahkan pilih menu kembali: ");
         	menu = s.nextInt();
@@ -34,6 +35,8 @@ public class Main {
         		displayMenuPegawaiTetap.displayMenuPT();
         		break;
         	case 3:
+        		displayMenuPegawainonTetap.displayMenunonPT();
+        	case 4:
         		System.out.println("Terima Kasih...");
         		System.exit(0);
         		break;

@@ -58,7 +58,6 @@ public class FormLogin {
 			if (user != null) {
 				Login = true;
 				System.out.println("Login Berhasil, Hello... " + Email);
-				displayMenuPegawaiTetap.displayMenuPT();
 			} else {
 				System.out.println("Email atau Password yang Anda Masukan salah, coba lagi...");
 			}
